@@ -1,0 +1,27 @@
+{% extends "layouts/_Main.html.twig" %}
+
+{% block title %} მთავარი გვერდი {% endblock %}
+
+{% block body %}
+	<div class="welcome">
+		<p class="title">მოგესალმებით<p>
+		{% if msg %}
+			<p>{{ msg }}</p>
+		{% endif %}
+	</div>
+
+	<style type="text/css">
+		.welcome {
+			margin: 20px auto;
+			padding: 20px;
+		}
+
+		p {
+			font-family: 'BPG Nino Medium Caps', sans-serif;
+		}
+
+		p.title {
+			font-size: 24px;
+		}
+	</style>
+{% endblock %}

@@ -1,0 +1,125 @@
+@font-face {
+    font-family: 'BPG Nino Medium Caps';
+    src: url('fonts/bpg-nino-medium-caps-webfont.eot'); /* IE9 Compat Modes */
+    src: url('fonts/bpg-nino-medium-caps-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/bpg-nino-medium-caps-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/bpg-nino-medium-caps-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/bpg-nino-medium-caps-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/bpg-nino-medium-caps-webfont.svg#bpg_nino_medium_capsregular') format('svg'); /* Legacy iOS */
+}
+	
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'BPG Nino Medium Caps', sans-serif;
+	background-color: #f1f1f1;
+}
+
+
+.container {
+	width: 92%;
+	margin: 20px auto;
+}
+
+h1.title {
+	margin: 40px 0px 15px 0px;
+}
+
+h1 {
+	color: #ff5454;
+	font-weight: 600;
+	font-family: 'Arial', sans-serif;
+}
+
+h1::before {
+	content: '~# ';
+}
+
+
+.a {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	background-color: #202020;
+	padding: 10px 40px 10px 40px;
+	color: #ddd;
+}
+
+
+.a p {
+	font-family: 'Consolas';
+	font-style: italic;
+	font-size: 16px;
+}
+
+.b {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 70px 40px 70px;
+	background-color: #ff5454;
+	color: #fff;
+}
+
+p.big {
+	font-family: 'BPG Nino Medium Caps', sans-serif;
+	font-size: 28px;
+	font-weight: 600;
+	margin-bottom: 10px;
+}
+
+p.big span.err_code {
+	font-size: 16px;
+}
+
+.badfileimg {
+	width: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+	.badfileimg {
+		display: none;
+	}
+
+	.b {
+		display: block;
+		padding: 40px 10px 40px 20px;
+	}
+
+	.a {
+		padding: 8px 30px 8px 30px;
+	}
+
+	p.big {
+		font-size: 20px;
+	}
+
+	.flex { 
+		display: block;
+	}
+
+	.a p {
+		font-size: 13px;
+	}
+
+	h1 {
+		font-size: 23px;
+	}
+
+	.info > p {
+		margin-bottom: 10px;
+	}
+}
+
+.info {
+	margin: 30px 20px 10px 20px;
+}
+
+.info > p > span.one {
+	width: 300px;
+	display: inline-block;
+}
