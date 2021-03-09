@@ -4,7 +4,6 @@
 	<meta charset="utf-8">
 	<meta name="theme-color" content="#202020">
 	<meta name="generator" content="Thunderstorm">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="/static/err.css">
 	<title>ThunderError</title>
 </head>
