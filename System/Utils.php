@@ -5,7 +5,7 @@
  * @package App
 */
 
-namespace App\Models;
+namespace Thunderstorm;
 
 class Utils {
 	function encrypt($data)
