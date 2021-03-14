@@ -5,7 +5,7 @@
  * @package Framework\Firewall
 */
 
-namespace App\Modules;
+namespace Thunderstorm;
 
 class Denylist {
 	public static $tor = [

@@ -1,20 +1,17 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-use App\Modules\Router;
-use App\Modules\Database;
-use App\Modules\ErrorHandler;
-use App\Modules\Firewall;
-use App\Controller;
+use Thunderstorm\Router;
+use Thunderstorm\Database;
+use Thunderstorm\Firewall;
+use Thunderstorm\Controllers\Controller;
 
-
-$eh = new ErrorHandler();
-$db = new Database();
 $waf = new Firewall();
-$waf->Run();
+$waf->run();
 
-
+$db = new Database();
 $router = new Router($db);
-$router->add('/', [Controller::class, 'index'], 'get');
-$router->run();
+
+$router->add('/', [Controller::class, 'index'], 'GET');
+$router->Run();

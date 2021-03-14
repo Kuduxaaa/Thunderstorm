@@ -1,18 +1,21 @@
 {
-    "name": "root/app",
-    "authors": [
-        {
-            "name": "Nika Kudukhashvili",
-            "email": "nikakuduxashvili9@gmail.com"
-        }
-    ],
+    "name": "thunderstorm/root",
+    "description": "Thunderstorm Minimalist MVC Framework",
+    "type": "project",
     "require": {
         "twig/twig": "^3.3"
     },
+    "authors": [
+        {
+            "name": "Kuduxaaa",
+            "email": "nikakuduxashvili0@gmail.com"
+        }
+    ],
+
     "autoload": {
-    	"psr-4": {
-    		"App\\Modules\\": "./Modules",
-            "App\\": "./Controllers"
-    	}
+        "psr-4": {
+            "Thunderstorm\\": "./System",
+            "Thunderstorm\\Controllers\\": "./Controllers"
+        }
     }
 }

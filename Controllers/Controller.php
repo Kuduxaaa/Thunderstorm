@@ -2,16 +2,22 @@
 
 /**
  * @author Kuduxaaa <nikakuduxashvili0@gmail.com>
- * @package App
+ * @package Thunderstorm
  */
 
-namespace App;
-use App\Modules\Router;
+namespace Thunderstorm\Controllers;
+use Thunderstorm\Router;
 
 class Controller
 {
-	public static function index(Router $router)
+
+	public static function index (Router $router)
 	{
-		return $router->render_template('index.html.twig', ['msg' => 'Thunderstorm v1.4']);
+		$requested_headers = $router->getRequestHeaders();
+		$registered_routes = $router->getAllRoute();
+		$database = $router->database;
+		$router->renderTemplate('index.html.twig', [
+			'msg' => 'Thunderstorm v1.4'
+		]);
 	}
 }

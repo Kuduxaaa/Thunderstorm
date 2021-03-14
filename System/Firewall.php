@@ -6,9 +6,9 @@
  * Powered By NSS 🛡️
 */
 
-namespace App\Modules;
+namespace Thunderstorm;
 require_once __DIR__ . '/Core/Denylist.php';
-use App\Modules\Router;
+use Thunderstorm\Router;
 
 class Firewall {
 	private $DetectTOR = true;
@@ -36,7 +36,12 @@ class Firewall {
 			$temp = str_replace($arr, '~#1NF1CI3D', $this->QueryParams);
 			if (strrpos($temp, '~#1NF1CI3D'))
 			{
-				Router::render_error(403, $reason);
+				http_response_code(403);
+				Router::renderTemplate ('err.html.twig', [
+					'code' => 403,
+					'msg' => $reason
+				]);
+				exit;
 			}
 		}
 	}

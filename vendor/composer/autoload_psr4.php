@@ -7,8 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Thunderstorm\\Controllers\\' => array($baseDir . '/Controllers'),
+    'Thunderstorm\\' => array($baseDir . '/System'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
-    'App\\Modules\\' => array($baseDir . '/Modules'),
-    'App\\' => array($baseDir . '/Controllers'),
 );
