@@ -5,8 +5,8 @@
  * @package App
 */
 
-namespace App\Modules;
-use App\Modules\Router;
+namespace Thunderstorm;
+use Thunderstorm\Router;
 
 class ErrorHandler
 {
