@@ -1,3 +1,4 @@
 theme: jekyll-theme-cayman
 title: Thunderstorm
 description: Welcome to Thunderstorm - Thunderstorm is a minimalist PHP Model View Controller Framework
+show_downloads: true
