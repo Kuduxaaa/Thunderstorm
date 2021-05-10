@@ -15,6 +15,7 @@ class ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a
         'T' => 
         array (
             'Twig\\' => 5,
+            'Thunderstorm\\Modules\\' => 21,
             'Thunderstorm\\Controllers\\' => 25,
             'Thunderstorm\\' => 13,
         ),
@@ -30,13 +31,17 @@ class ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Thunderstorm\\Modules\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Controllers/Modules',
+        ),
         'Thunderstorm\\Controllers\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Controllers',
+            0 => __DIR__ . '/../..' . '/src/Controllers',
         ),
         'Thunderstorm\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/System',
+            0 => __DIR__ . '/../..' . '/src/System',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (

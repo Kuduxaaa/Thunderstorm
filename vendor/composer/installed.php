@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => '1.0.0+no-version-set',
+    'version' => '1.0.0.0',
     'aliases' => 
     array (
     ),
-    'reference' => '0eb93eb7cc49d1eed97f858a34a6e89bb56360e3',
+    'reference' => NULL,
     'name' => 'thunderstorm/root',
   ),
   'versions' => 
@@ -31,12 +31,12 @@
     ),
     'thunderstorm/root' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => '1.0.0+no-version-set',
+      'version' => '1.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '0eb93eb7cc49d1eed97f858a34a6e89bb56360e3',
+      'reference' => NULL,
     ),
     'twig/twig' => 
     array (

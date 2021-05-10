@@ -16,8 +16,9 @@ class Controller
 		$requested_headers = $router->getRequestHeaders();
 		$registered_routes = $router->getAllRoute();
 		$database = $router->database;
+
 		$router->renderTemplate('index.html.twig', [
-			'msg' => 'Thunderstorm v1.4'
+			'msg' => 'Thunderstorm v1.5'
 		]);
 	}
 }

@@ -25,15 +25,26 @@ class Router
 		$this->database = $database;
 	}
 
-
 	public function add ($route, $func, $method)
 	{
-		$method = strtolower($method);
 		$route = preg_replace('/\//', '\\/', $route);
 		$route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-z-]+)', $route);
 		$route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
 		$route = '/^' . $route . '$/i';
-		$this->routeList[$method][$route] = $func;
+		
+		if (is_array($method))
+		{
+			foreach($method as $meth)
+			{
+				$meth = strtolower($meth);
+				$this->routeList[$meth][$route] = $func;
+			}
+		}
+		else
+		{
+			$method = strtolower($method);
+			$this->routeList[$method][$route] = $func;
+		}
 	}
 
 
@@ -54,8 +65,9 @@ class Router
 			{
 				if (preg_match($route, $this->requestURI, $matches))
 				{
-					$page_found = true;
+
 					array_shift($matches);
+					$page_found = true;
 					$parameters_array = array_merge([$this], $matches);
 					call_user_func_array($func, $parameters_array);
 					break;
@@ -64,20 +76,24 @@ class Router
 		}
 		else
 		{
-			die('first add routes bitch');
+			$this->renderError(405, "Method Not Allowed");
 		}
 
 		if (!$page_found)
-			{
-				http_response_code (404);
-				$this->renderTemplate ('err.html.twig', [
-					'code' => 404,
-					'msg' => 'Not Found'
-				]);
-				exit;
-			}
+		{
+			$this->renderError(404);
+		}
 	}
 
+	public function renderError($code=404, $msg='Not Found')
+	{
+		http_response_code ((int) $code);
+		$this->renderTemplate ('err.html.twig', [
+	        'code' => (int) $code,
+	        'msg' => $msg
+	  	]);
+	  	exit;
+	}
 
 	public function getAllRoute ()
 	{

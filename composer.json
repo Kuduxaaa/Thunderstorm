@@ -14,8 +14,9 @@
 
     "autoload": {
         "psr-4": {
-            "Thunderstorm\\": "./System",
-            "Thunderstorm\\Controllers\\": "./Controllers"
+            "Thunderstorm\\": "./src/System",
+            "Thunderstorm\\Controllers\\": "./src/Controllers",
+            "Thunderstorm\\Modules\\": "./src/Controllers/Modules"
         }
     }
 }
