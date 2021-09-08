@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a
+class ComposerStaticInit25600a7cf0d0e5ce25b90b900f410c19
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -15,7 +15,6 @@ class ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a
         'T' => 
         array (
             'Twig\\' => 5,
-            'Thunderstorm\\Modules\\' => 21,
             'Thunderstorm\\Controllers\\' => 25,
             'Thunderstorm\\' => 13,
         ),
@@ -31,17 +30,13 @@ class ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
-        'Thunderstorm\\Modules\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src/Controllers/Modules',
-        ),
         'Thunderstorm\\Controllers\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Controllers',
+            0 => __DIR__ . '/../..' . '/controllers',
         ),
         'Thunderstorm\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/System',
+            0 => __DIR__ . '/../..' . '/core',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
@@ -53,16 +48,11 @@ class ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a
         ),
     );
 
-    public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc50b0572f06e125462f786bd9e5bb09a::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit25600a7cf0d0e5ce25b90b900f410c19::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit25600a7cf0d0e5ce25b90b900f410c19::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }

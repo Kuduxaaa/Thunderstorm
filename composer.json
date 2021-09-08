@@ -1,22 +1,21 @@
 {
-    "name": "thunderstorm/root",
-    "description": "Thunderstorm Minimalist MVC Framework",
-    "type": "project",
-    "require": {
-        "twig/twig": "^3.3"
-    },
+    "name": "root/thunderstorm",
+    "description": "Thunderstorm: Nerve Security",
+    "license": "MIT",
     "authors": [
         {
-            "name": "Kuduxaaa",
+            "name": "Nika Kudukhashvili",
             "email": "nikakuduxashvili0@gmail.com"
         }
     ],
-
+    "require": {
+        "twig/twig": "^3.3",
+        "ext-pdo": "*"
+    },
     "autoload": {
         "psr-4": {
-            "Thunderstorm\\": "./src/System",
-            "Thunderstorm\\Controllers\\": "./src/Controllers",
-            "Thunderstorm\\Modules\\": "./src/Controllers/Modules"
+            "Thunderstorm\\": "core/",
+            "Thunderstorm\\Controllers\\": "controllers/"
         }
     }
 }
