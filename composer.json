@@ -15,6 +15,7 @@
     "autoload": {
         "psr-4": {
             "Thunderstorm\\": "core/",
+            "Thunderstorm\\API\\": "core/api/",
             "Thunderstorm\\Controllers\\": "controllers/"
         }
     }

@@ -6,12 +6,16 @@
 
 namespace Thunderstorm\Controllers;
 
-use Thunderstorm\Router as Request;
+use Thunderstorm\Router;
 
 class DefaultController
 {
-    public static function index(Request $request)
+    public static function index(Router $router)
     {
-        $request->render_template('index.html');
+        // var_dump($router->request->get('admin'));
+        // $router->response->render_template('index.html');
+        // $router->response->render_json(['hello', 'world']);
+        // $router->response->render_json(['hello', 'world'], 200);
+        $router->response->render_template('index.html');
     }
 }

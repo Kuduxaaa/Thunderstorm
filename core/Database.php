@@ -6,17 +6,23 @@
  */
 
 namespace Thunderstorm;
+
+use Thunderstorm\Application;
 use PDO;
 
-class Database extends \Thunderstorm\Request
-{
+class Database {
     protected $pdo;
     protected $stmt;
 
     public function __construct()
     {
-        include_once dirname(__DIR__).'/config.php';
-        $this->pdo = new PDO('mysql:host=localhost;port=3306;dbname='.DB_NAME, DB_USERNAME, DB_PASSWORD);
+        $dbhost = Application::config('DB_HOST');
+        $dbport = Application::config('DB_PORT');
+        $dbname = Application::config('DB_NAME');
+        $dbuser = Application::config('DB_USERNAME');
+        $dbpass = Application::config('DB_PASSWORD');
+
+        $this->pdo = new PDO('mysql:host='.$dbhost.';port='.$dbport.';dbname='.$dbname, $dbuser, $dbpass);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->pdo->exec('set names utf8');
     }
@@ -38,6 +44,7 @@ class Database extends \Thunderstorm\Request
     public function query($sql)
     {
         $this->stmt = $this->pdo->prepare($sql);
+        return $this;
     }
 
     public function fetch_all()
@@ -58,6 +65,8 @@ class Database extends \Thunderstorm\Request
     public function bind_param($param, $val)
     {
         $this->stmt->BindParam($param, $val);
+
+        return $this;
     }
 
     public function row_count()

@@ -6,7 +6,7 @@ class Request
 {
     public function path()
     {
-        $path = $_SERVER['REQUEST_URI'] ?? '/';
+        $path = parse_url($_SERVER['REQUEST_URI'])['path'] ?? '/';
         $position = strpos('?', $path);
 
         if ($position === false)
@@ -40,4 +40,13 @@ class Request
         return $headers;
     }
 
+    public function get($key)
+    {
+        return $_GET[$key] ?? null;
+    }
+
+    public function post($key)
+    {
+        return $_POST[$key] ?? null;
+    }
 }
